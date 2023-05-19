@@ -1,6 +1,5 @@
-import React from "react";
 import navLogo from "../../../assets/navLogo2.jpg";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const NavigationBar = () => {
   return (
@@ -15,13 +14,25 @@ const NavigationBar = () => {
       </div>
       <div>
         <ul className=" md:flex gap-5 font-bold text-xl space-y-2 md:space-y-0">
-          <Link to="/">
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? "text-orange-600" : "")}
+          >
             <li>Home</li>
-          </Link>
-          <li>All Toys</li>
-          <li>My Toys</li>
-          <li>Add A Toy</li>
-          <li>Blogs</li>
+          </NavLink>
+          <NavLink>
+            <li>All Toys</li>
+          </NavLink>
+          <NavLink>
+            <li>My Toys</li>
+          </NavLink>
+          <NavLink>
+            <li>Add A Toy</li>
+          </NavLink>
+          <NavLink>
+            {" "}
+            <li>Blogs</li>
+          </NavLink>
         </ul>
       </div>
       <div className="text-center font-bold text-xl">

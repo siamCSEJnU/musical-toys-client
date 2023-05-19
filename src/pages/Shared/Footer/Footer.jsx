@@ -3,7 +3,7 @@ import { FaBeer, FaFacebook, FaTwitter, FaYoutube } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer className=" bg-orange-200">
-      <div className="footer p-10 grid font-semibold grid grid-cols-2 md:grid-cols-4 ">
+      <div className="footer p-10 grid font-semibold  grid-cols-2 md:grid-cols-4 ">
         <div>
           <span className=" text-xl font-bold ">Services</span>
           <a className="link link-hover">Branding</a>
