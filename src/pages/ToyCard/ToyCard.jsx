@@ -26,7 +26,7 @@ const ToyCard = ({ toy }) => {
           Seller : <span className="font-mono">{seller_name}</span>{" "}
         </p>
         <div className="card-actions justify-end">
-          <button className="btn">view details</button>
+          <button className="btn hover:bg-orange-500">view details</button>
         </div>
       </div>
     </div>
