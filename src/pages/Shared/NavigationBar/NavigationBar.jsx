@@ -5,12 +5,13 @@ import { AuthContext } from "../../../Providers/AuthProvider";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 
 const NavigationBar = () => {
-  const { user, LogOut } = useContext(AuthContext);
+  const { user, LogOut, setLogError } = useContext(AuthContext);
 
   const handleLogOut = () => {
     LogOut()
       .then(() => {
         console.log("successfully sign out..");
+        setLogError("");
       })
       .catch((error) => console.log(error));
   };
