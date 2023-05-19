@@ -1,11 +1,12 @@
-import { Form, Link } from "react-router-dom";
+import { Form, Link, useNavigate } from "react-router-dom";
 import login from "../../assets/login/login.jpg";
 import { FaGoogle } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 const Login = () => {
-  const { setUser, GoogleSignIn, ManualSignIn, logError, setLogError } =
-    useContext(AuthContext);
+  const { setUser, GoogleSignIn, ManualSignIn } = useContext(AuthContext);
+  const [logError, setLogError] = useState("");
+  const navigate = useNavigate();
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -20,6 +21,7 @@ const Login = () => {
         form.reset();
         setLogError("");
         setUser(loggedUser);
+        navigate("/");
       })
       .catch((error) => {
         console.log(error.message);
@@ -32,7 +34,9 @@ const Login = () => {
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
+        setLogError("");
         setUser(loggedUser);
+        navigate("/");
       })
       .catch((error) => console.log(error));
   };

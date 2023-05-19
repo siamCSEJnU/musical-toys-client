@@ -16,7 +16,7 @@ const AuthProvider = ({ children }) => {
   const auth = getAuth(app);
 
   const [user, setUser] = useState([]);
-  const [logError, setLogError] = useState("");
+
   const [loading, setLoading] = useState(true);
 
   const googleProvider = new GoogleAuthProvider();
@@ -56,8 +56,6 @@ const AuthProvider = ({ children }) => {
 
   const authInfo = {
     user,
-    logError,
-    setLogError,
     setLoading,
     setUser,
     GoogleSignIn,
