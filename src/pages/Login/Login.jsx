@@ -1,9 +1,34 @@
-import { Link } from "react-router-dom";
+import { Form, Link } from "react-router-dom";
 import login from "../../assets/login/login.jpg";
 import { FaGoogle } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 const Login = () => {
+  const { user, setUser, GoogleSignIn } = useContext(AuthContext);
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+  };
+
+  const handleGoogleSignIn = () => {
+    GoogleSignIn()
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        setUser(loggedUser);
+      })
+      .catch((error) => console.log(error));
+  };
+
   return (
-    <div className=" md:flex w-2/3 mx-auto items-center ">
+    <Form
+      onSubmit={handleLogin}
+      className=" md:flex w-2/3 mx-auto items-center "
+    >
       <div className=" ">
         <img className="h-1/2" src={login} alt="" />
       </div>
@@ -40,7 +65,7 @@ const Login = () => {
         <input
           type="submit"
           value="Login"
-          className="btn hover:bg-lime-600 border-0 w-4/5"
+          className="btn hover:bg-orange-500 border-0 w-4/5"
         />
         <p className="font-semibold">
           New to Musical Toys?{" "}
@@ -50,15 +75,18 @@ const Login = () => {
           <br /> or,
         </p>
         <div>
-          <button className="flex items-center gap-4 border-slate-600 hover:border-orange-400  rounded-md border-2 w-4/5 ps-3 ">
+          <button
+            onClick={handleGoogleSignIn}
+            className="flex items-center gap-4 border-slate-700 hover:border-orange-400  rounded-md border-2 w-4/5 ps-3 "
+          >
             <FaGoogle className="text-orange-600" />{" "}
-            <span className="bg-slate-600 hover:bg-orange-500  p-2 w-full text-white">
+            <span className="bg-slate-700 hover:bg-orange-500  p-2 w-full text-white">
               Sign In with Google
             </span>
           </button>
         </div>
       </div>
-    </div>
+    </Form>
   );
 };
 

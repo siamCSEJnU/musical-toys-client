@@ -1,9 +1,21 @@
-import { Link } from "react-router-dom";
+import { Form, Link } from "react-router-dom";
 import register from "../../assets/register/register.jpg";
 
 const Register = () => {
+  const handleRegister = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const photo = form.photo.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password, name, photo);
+  };
   return (
-    <div className=" md:flex w-2/3 mx-auto items-center ">
+    <Form
+      onSubmit={handleRegister}
+      className=" md:flex w-2/3 mx-auto items-center "
+    >
       <div className=" ">
         <img className="h-1/2" src={register} alt="" />
       </div>
@@ -68,7 +80,7 @@ const Register = () => {
         <input
           type="submit"
           value="sign Up"
-          className="btn hover:bg-lime-600 border-0 w-4/5"
+          className="btn hover:bg-orange-500 border-0 w-4/5"
         />
         <p className="font-semibold">
           Already registered?{" "}
@@ -78,7 +90,7 @@ const Register = () => {
           here
         </p>
       </div>
-    </div>
+    </Form>
   );
 };
 
