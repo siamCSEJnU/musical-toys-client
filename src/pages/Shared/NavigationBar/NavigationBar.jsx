@@ -1,7 +1,20 @@
+import { useContext } from "react";
 import navLogo from "../../../assets/navLogo2.jpg";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../../Providers/AuthProvider";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
 
 const NavigationBar = () => {
+  const { user, LogOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    LogOut()
+      .then(() => {
+        console.log("successfully sign out..");
+      })
+      .catch((error) => console.log(error));
+  };
+
   return (
     <div className="md:flex justify-between items-center md:h-32 p-3  bg-orange-200 space-y-5 md:space-y-0 ">
       <div>
@@ -23,22 +36,40 @@ const NavigationBar = () => {
           <NavLink>
             <li>All Toys</li>
           </NavLink>
-          <NavLink>
-            <li>My Toys</li>
-          </NavLink>
-          <NavLink>
-            <li>Add A Toy</li>
-          </NavLink>
+          {user && (
+            <NavLink>
+              <li>My Toys</li>
+            </NavLink>
+          )}
+          {user && (
+            <NavLink>
+              <li>Add A Toy</li>
+            </NavLink>
+          )}
           <NavLink>
             {" "}
             <li>Blogs</li>
           </NavLink>
         </ul>
       </div>
-      <div className="text-center font-bold text-xl">
-        <Link to="/login">
-          <button className="btn">Login</button>
-        </Link>
+      <div className="text-center font-bold text-xl flex items-center justify-center gap-2">
+        {user && (
+          <OverlayTrigger
+            placement="top"
+            overlay={<Tooltip>{user?.displayName}</Tooltip>}
+          >
+            <img src={user.photoURL} className="h-14 rounded-full" alt="" />
+          </OverlayTrigger>
+        )}
+        {user ? (
+          <button onClick={handleLogOut} className="btn">
+            Log Out
+          </button>
+        ) : (
+          <Link to="/login">
+            <button className="btn">Login</button>
+          </Link>
+        )}
       </div>
     </div>
   );
