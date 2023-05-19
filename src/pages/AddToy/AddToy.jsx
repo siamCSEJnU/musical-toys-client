@@ -1,13 +1,50 @@
-import React from "react";
+import { useContext } from "react";
 import { Form } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const AddToy = () => {
+  const { user } = useContext(AuthContext);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const toyName = form.toyName.value;
+    const sellerName = form.sellerName.value;
+    const price = form.price.value;
+    const rating = form.rating.value;
+    const sellerEmail = form.sellerEmail.value;
+    const url = form.url.value;
+    const details = form.details.value;
+    const quantity = form.quantity.value;
+    const category = form.category.value;
+    const toy = {
+      toyName,
+      seller_name: sellerName,
+      seller_email: sellerEmail,
+      price,
+      rating,
+      photo_url: url,
+      details,
+      quantity,
+      category,
+    };
+    console.log(toy);
+    fetch("http://localhost:5000/addToy", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(toy),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  };
+
   return (
     <div>
       <h2 className="text-4xl font-bold text-slate-600 text-center mb-10">
         Add A Toy
       </h2>
-      <Form className="bg-slate-200 w-4/5 mx-auto">
+      <Form onSubmit={handleSubmit} className="bg-slate-300 w-4/5 mx-auto">
         <div className="md:grid grid-cols-2  ps-20 py-5 space-y-3 ">
           <div className="space-y-2 ">
             <label>
@@ -51,6 +88,7 @@ const AddToy = () => {
               name="sellerName"
               id=""
               placeholder="Seller name"
+              defaultValue={user?.displayName}
               className="rounded-md p-3 outline-0 w-2/3"
             />
           </div>
@@ -66,6 +104,7 @@ const AddToy = () => {
               name="sellerEmail"
               id=""
               placeholder="Seller email"
+              defaultValue={user?.email}
               className="rounded-md p-3 outline-0 w-2/3"
             />
           </div>

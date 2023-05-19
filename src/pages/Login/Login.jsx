@@ -49,7 +49,7 @@ const Login = () => {
       <div className=" ">
         <img className="h-1/2" src={login} alt="" />
       </div>
-      <div className=" space-y-4 md:w-1/2 bg-orange-300 p-5 rounded-lg ">
+      <div className=" space-y-4 md:w-1/2 bg-slate-300 p-5 rounded-lg ">
         <h2 className="text-4xl font-bold text-slate-700">Login here!</h2>
         <div className="space-y-2">
           <label>
