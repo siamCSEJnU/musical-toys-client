@@ -18,11 +18,12 @@ const Banner = () => {
           blend of fun and education, our collection aims to nurture a love for
           music, enhance cognitive development, and ignite the imagination.
         </p>
+        <button className="btn bg-yellow-600 border-0">Explore More</button>
       </div>
       <div className="flex-shrink-0">
         <img
           src={banner}
-          className=""
+          className="object-cover"
           style={{ width: "600px", height: "450px" }}
           alt=""
         />

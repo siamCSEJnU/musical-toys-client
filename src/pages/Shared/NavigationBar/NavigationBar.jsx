@@ -1,5 +1,6 @@
 import React from "react";
 import navLogo from "../../../assets/navLogo2.jpg";
+import { Link } from "react-router-dom";
 
 const NavigationBar = () => {
   return (
@@ -14,7 +15,9 @@ const NavigationBar = () => {
       </div>
       <div>
         <ul className=" md:flex gap-5 font-bold text-xl space-y-2 md:space-y-0">
-          <li>Home</li>
+          <Link to="/">
+            <li>Home</li>
+          </Link>
           <li>All Toys</li>
           <li>My Toys</li>
           <li>Add A Toy</li>
@@ -22,7 +25,9 @@ const NavigationBar = () => {
         </ul>
       </div>
       <div className="text-center font-bold text-xl">
-        <button>Login</button>
+        <Link to="/login">
+          <button className="btn">Login</button>
+        </Link>
       </div>
     </div>
   );

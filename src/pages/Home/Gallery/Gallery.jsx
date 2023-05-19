@@ -17,7 +17,7 @@ const Gallery = () => {
   };
   return (
     <div>
-      <h2 className="text-4xl font-bold mb-8">Gallery</h2>
+      <h2 className="text-4xl font-bold mb-8 text-center ">Gallery</h2>
 
       <div className="w-1/3 mx-auto ">
         <ul className="flex justify-center  gap-5 mb-5">
@@ -41,14 +41,14 @@ const Gallery = () => {
           ))}
         </ul>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-5 ">
         {galleryImages.map((item) => (
           <div key={item.id}>
             <img
               src={item.image}
               alt=""
-              className="object-cover"
-              style={{ height: "200px", width: "100%" }}
+              className="object-cover h-36 md:h-60 w-full"
+              //   style={{ height: "300px", width: "100%" }}
             />
           </div>
         ))}

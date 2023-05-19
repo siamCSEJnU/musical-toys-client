@@ -36,7 +36,7 @@ const Footer = () => {
           />
           <input
             type="submit"
-            className="bg-orange-700 p-2 text-white font-semibold text-lg "
+            className="bg-slate-700  p-2 text-white font-semibold text-lg "
             value="Subscribe"
           />
         </div>
