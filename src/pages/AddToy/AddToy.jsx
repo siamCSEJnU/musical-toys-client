@@ -44,7 +44,7 @@ const AddToy = () => {
       <h2 className="text-4xl font-bold text-slate-600 text-center mb-10">
         Add A Toy
       </h2>
-      <Form onSubmit={handleSubmit} className="bg-slate-300 w-4/5 mx-auto">
+      <Form onSubmit={handleSubmit} className="bg-slate-200 w-4/5 mx-auto">
         <div className="md:grid grid-cols-2  ps-20 py-5 space-y-3 ">
           <div className="space-y-2 ">
             <label>
@@ -58,7 +58,7 @@ const AddToy = () => {
               name="toyName"
               id=""
               placeholder="Toy name"
-              className="rounded-md p-3 outline-0 w-2/3 "
+              className="rounded-md p-3 border-0 w-2/3 "
             />
           </div>
           <div className="space-y-2">
@@ -73,7 +73,7 @@ const AddToy = () => {
               name="url"
               id=""
               placeholder="Photo url"
-              className="rounded-md p-3 outline-0 w-2/3 "
+              className="rounded-md p-3 border-0 w-2/3 "
             />
           </div>
           <div className="space-y-2">
@@ -89,7 +89,7 @@ const AddToy = () => {
               id=""
               placeholder="Seller name"
               defaultValue={user?.displayName}
-              className="rounded-md p-3 outline-0 w-2/3"
+              className="rounded-md p-3 border-0 w-2/3"
             />
           </div>
           <div className="space-y-2">
@@ -105,7 +105,7 @@ const AddToy = () => {
               id=""
               placeholder="Seller email"
               defaultValue={user?.email}
-              className="rounded-md p-3 outline-0 w-2/3"
+              className="rounded-md p-3 border-0 w-2/3"
             />
           </div>
           <div className="space-y-2">
@@ -120,7 +120,7 @@ const AddToy = () => {
               name="category"
               id=""
               placeholder="piano,guitar,violin or drums"
-              className="rounded-md p-3 outline-0 w-2/3"
+              className="rounded-md p-3 border-0 w-2/3"
             />
           </div>
           <div className="space-y-2">
@@ -135,7 +135,7 @@ const AddToy = () => {
               name="price"
               id=""
               placeholder="Toy price"
-              className="rounded-md p-3 outline-0 w-2/3"
+              className="rounded-md p-3 border-0 w-2/3"
             />
           </div>
           <div className="space-y-2">
@@ -150,7 +150,7 @@ const AddToy = () => {
               name="rating"
               id=""
               placeholder="rating"
-              className="rounded-md p-3 outline-0 w-2/3"
+              className="rounded-md p-3 border-0 w-2/3"
             />
           </div>
           <div className="space-y-2">
@@ -165,7 +165,7 @@ const AddToy = () => {
               name="quantity"
               id=""
               placeholder="available quantity "
-              className="rounded-md p-3 outline-0 w-2/3"
+              className="rounded-md p-3 border-0 w-2/3"
             />
           </div>
           <div className="space-y-2">
@@ -176,7 +176,7 @@ const AddToy = () => {
             </label>
             <br />
             <textarea
-              className="w-2/3 rounded-md outline-0"
+              className="w-2/3 rounded-md border-0"
               name="details"
               id=""
               cols="30"
@@ -187,7 +187,7 @@ const AddToy = () => {
         <div className="text-center w-2/3 mx-auto pb-10">
           {" "}
           <input
-            className="btn hover:bg-orange-500 outline-0 w-1/2 "
+            className="btn hover:bg-orange-500 border-0 w-1/2 "
             type="submit"
             value="Submit"
           />

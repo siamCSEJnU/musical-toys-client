@@ -38,11 +38,11 @@ const AllToys = () => {
             id=""
             // value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className=" outline-0 rounded-md p-3 w-1/5 bg-slate-300 "
+            className=" border-0 rounded-md p-3 w-1/5 bg-slate-200 "
           />
           <input
             type="submit"
-            className="btn hover:bg-orange-500 ms-2"
+            className="btn border-0 hover:bg-orange-500 ms-2"
             value="search"
           />
         </Form>

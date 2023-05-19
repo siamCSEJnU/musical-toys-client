@@ -1,8 +1,5 @@
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-import guitar3 from "../../../../public/Gallery/guitar3.jpg";
-import guitar2 from "../../../../public/Gallery/guitar2.jpg";
-import { FaStar } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import CategoryShopCard from "../../CategoryShopCard/CategoryShopCard";
 
@@ -18,9 +15,6 @@ const CategoryShop = () => {
   useEffect(() => {
     setCollection([...new Set(toys.map((toy) => toy.category))]);
   }, []);
-  // const guitarToys = toys
-  //   ?.slice(0, 3)
-  //   .filter((toy) => toy.category.toLowerCase() === Guitar.toLowerCase());
 
   return (
     <div>

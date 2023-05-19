@@ -56,7 +56,7 @@ const Register = () => {
       <div className=" ">
         <img className="h-1/2" src={register} alt="" />
       </div>
-      <div className=" space-y-4 md:w-1/2 bg-slate-300 p-5 rounded-lg ">
+      <div className=" space-y-4 md:w-1/2 bg-slate-200 p-5 rounded-lg ">
         <h2 className="text-4xl font-bold text-slate-700">Sign Up here!</h2>
         <div className="space-y-2">
           <label>
@@ -65,7 +65,7 @@ const Register = () => {
           <br />
           <input
             type="text"
-            className="outline-0 rounded-md p-3 w-4/5"
+            className="border-0 rounded-md p-3 w-4/5"
             name="name"
             placeholder="your name"
             id=""
@@ -80,7 +80,7 @@ const Register = () => {
           <br />
           <input
             type="text"
-            className="outline-0 rounded-md p-3 w-4/5"
+            className="border-0 rounded-md p-3 w-4/5"
             name="photo"
             placeholder="your photo url"
             id=""
@@ -93,7 +93,7 @@ const Register = () => {
           <br />
           <input
             type="email"
-            className="outline-0 rounded-md p-3 w-4/5"
+            className="border-0 rounded-md p-3 w-4/5"
             name="email"
             placeholder="your eamil"
             id=""
@@ -109,7 +109,7 @@ const Register = () => {
           <input
             type="password"
             name="password"
-            className="outline-0 rounded-md p-3 w-4/5"
+            className="border-0 rounded-md p-3 w-4/5"
             placeholder="your password"
             id=""
           />

@@ -49,7 +49,7 @@ const Login = () => {
       <div className=" ">
         <img className="h-1/2" src={login} alt="" />
       </div>
-      <div className=" space-y-4 md:w-1/2 bg-slate-300 p-5 rounded-lg ">
+      <div className=" space-y-4 md:w-1/2 bg-slate-200 p-5 rounded-lg ">
         <h2 className="text-4xl font-bold text-slate-700">Login here!</h2>
         <div className="space-y-2">
           <label>
@@ -58,7 +58,7 @@ const Login = () => {
           <br />
           <input
             type="email"
-            className="outline-0 rounded-md p-3 w-4/5"
+            className="border-0 rounded-md p-3 w-4/5"
             name="email"
             placeholder="your eamil"
             id=""
@@ -74,7 +74,7 @@ const Login = () => {
           <input
             type="password"
             name="password"
-            className="outline-0 rounded-md p-3 w-4/5"
+            className="border-0 rounded-md p-3 w-4/5"
             placeholder="your password"
             id=""
           />

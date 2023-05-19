@@ -69,12 +69,15 @@ const NavigationBar = () => {
           </OverlayTrigger>
         )}
         {user ? (
-          <button onClick={handleLogOut} className="btn">
+          <button
+            onClick={handleLogOut}
+            className="btn border-0 hover:bg-orange-500"
+          >
             Log Out
           </button>
         ) : (
           <Link to="/login">
-            <button className="btn">Login</button>
+            <button className="btn border-0 hover:bg-orange-500">Login</button>
           </Link>
         )}
       </div>
