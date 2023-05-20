@@ -5,7 +5,14 @@ import MyToysRow from "./MyToysRow";
 const MyToys = () => {
   const { user, toys } = useContext(AuthContext);
 
-  const myToys = toys.filter((toy) => toy.seller_email == user.email);
+  const myToys = toys?.filter((toy) => toy.seller_email == user.email);
+  if (!myToys) {
+    return (
+      <div className="text-center">
+        <progress className="progress w-1/2 "></progress>
+      </div>
+    );
+  }
 
   return (
     <div className="overflow-x-auto  w-full">

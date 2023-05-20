@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { FaEdit } from "react-icons/fa";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const MyToysRow = ({ myToy }) => {
   const { toys, setToys } = useContext(AuthContext);
@@ -88,9 +89,11 @@ const MyToysRow = ({ myToy }) => {
       <td>{quantity}</td>
       <td>{rating}</td>
       <td>
-        <button>
-          <FaEdit></FaEdit>
-        </button>
+        <Link to={`/updateToy/${_id}`}>
+          <button>
+            <FaEdit></FaEdit>
+          </button>
+        </Link>
       </td>
     </tr>
   );
