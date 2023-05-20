@@ -41,7 +41,10 @@ const NavigationBar = () => {
             <li>All Toys</li>
           </NavLink>
           {user && (
-            <NavLink>
+            <NavLink
+              to="/myToys"
+              className={({ isActive }) => (isActive ? "text-orange-600" : "")}
+            >
               <li>My Toys</li>
             </NavLink>
           )}

@@ -54,8 +54,17 @@ const AuthProvider = ({ children }) => {
     };
   }, []);
 
+  const [toys, setToys] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5000/allToys")
+      .then((res) => res.json())
+      .then((data) => setToys(data));
+  }, []);
+
   const authInfo = {
     user,
+    toys,
+    setToys,
     setLoading,
     setUser,
     GoogleSignIn,

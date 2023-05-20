@@ -14,7 +14,7 @@ const CategoryShop = () => {
 
   useEffect(() => {
     setCollection([...new Set(toys.map((toy) => toy.category))]);
-  }, []);
+  }, [toys]);
 
   return (
     <div>

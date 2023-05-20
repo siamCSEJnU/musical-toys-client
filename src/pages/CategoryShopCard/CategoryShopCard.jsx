@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const CategoryShopCard = ({ toy }) => {
-  console.log(toy);
+  //   console.log(toy);
   const { _id, photo_url, price, rating, toyName } = toy;
   return (
     <div className="card card-compact  w-96 bg-slate-200 shadow-xl">
