@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import { FaEdit } from "react-icons/fa";
 import { AuthContext } from "../../Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const MyToysRow = ({ myToy }) => {
-  const { setToys } = useContext(AuthContext);
+  const { toys, setToys } = useContext(AuthContext);
   const {
     _id,
     category,
@@ -16,7 +17,33 @@ const MyToysRow = ({ myToy }) => {
     toyName,
   } = myToy;
 
-  const handleDelete = (id) => {};
+  const handleDelete = (id) => {
+    Swal.fire({
+      icon: "errors",
+      confirmButtonText: "Cool",
+      title: "Are you sure want to delete this??",
+      text: "You won't be able to revert this!",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/allToys/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire("Deleted!", "Your toy has been deleted.", "success");
+              const remainingToys = toys.filter((toy) => toy._id !== id);
+              setToys(remainingToys);
+            }
+          });
+      }
+    });
+  };
 
   return (
     <tr className="text-lg  text-slate-700 font-semibold">
