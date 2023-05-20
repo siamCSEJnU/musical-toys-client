@@ -1,11 +1,20 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import MyToysRow from "./MyToysRow";
 import useTitle from "../../hooks/useTitle";
+import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const MyToys = () => {
   useTitle("My Toys");
-  const { user, toys } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
+  // const toys = useLoaderData();
+  const [toys, setToys] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5000/allToys")
+      .then((res) => res.json())
+      .then((data) => setToys(data));
+  }, []);
 
   const myToys = toys?.filter((toy) => toy.seller_email == user.email);
   if (!myToys) {
@@ -15,6 +24,34 @@ const MyToys = () => {
       </div>
     );
   }
+
+  const handleDelete = (id) => {
+    Swal.fire({
+      icon: "errors",
+      confirmButtonText: "Cool",
+      title: "Are you sure want to delete this??",
+      text: "You won't be able to revert this!",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/allToys/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire("Deleted!", "Your toy has been deleted.", "success");
+              const remainingToys = toys.filter((toy) => toy._id !== id);
+              setToys(remainingToys);
+            }
+          });
+      }
+    });
+  };
 
   return (
     <div className="overflow-x-auto  w-full">
@@ -39,7 +76,11 @@ const MyToys = () => {
         </thead>
         <tbody>
           {myToys.map((myToy) => (
-            <MyToysRow key={myToy._id} myToy={myToy}></MyToysRow>
+            <MyToysRow
+              key={myToy._id}
+              myToy={myToy}
+              handleDelete={handleDelete}
+            ></MyToysRow>
           ))}
         </tbody>
       </table>

@@ -22,12 +22,20 @@ const AllToys = () => {
     console.log(search);
   };
   const filteredToys = searchQuery
-    ? toys.filter(
+    ? toys?.filter(
         (toy) =>
           toy.toyName.toLowerCase().includes(searchQuery.toLowerCase()) ||
           toy.category.toLowerCase().includes(searchQuery.toLowerCase())
       )
-    : toys.slice(0, 20);
+    : toys?.slice(0, 20);
+
+  if (!filteredToys) {
+    return (
+      <div className="text-center">
+        <progress className="progress w-1/2 h-5"></progress>
+      </div>
+    );
+  }
   return (
     <div>
       <div className="text-center space-y-10 mb-10">

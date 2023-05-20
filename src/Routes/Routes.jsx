@@ -70,6 +70,7 @@ const router = createBrowserRouter([
             <UpdateToy></UpdateToy>
           </PrivateRoutes>
         ),
+        loader: () => fetch("http://localhost:5000/allToys"),
       },
     ],
   },

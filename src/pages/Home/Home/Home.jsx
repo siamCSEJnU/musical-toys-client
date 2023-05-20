@@ -3,6 +3,8 @@ import Banner from "../Banner/Banner";
 import Gallery from "../Gallery/Gallery";
 import CategoryShop from "../CategoryShop/CategoryShop";
 import useTitle from "../../../hooks/useTitle";
+import LatestToys from "../LatestToys/LatestToys";
+import ToyBrands from "../ToyBrands/ToyBrands";
 
 const Home = () => {
   useTitle("Home");
@@ -11,6 +13,8 @@ const Home = () => {
       <Banner></Banner>
       <Gallery></Gallery>
       <CategoryShop></CategoryShop>
+      <LatestToys></LatestToys>
+      <ToyBrands></ToyBrands>
     </div>
   );
 };

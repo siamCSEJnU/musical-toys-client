@@ -1,12 +1,12 @@
 import { useContext, useRef } from "react";
-import { Form, useParams } from "react-router-dom";
+import { Form, useLoaderData, useParams } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
 import useTitle from "../../hooks/useTitle";
 
 const UpdateToy = () => {
   useTitle("Update Toy");
-  const { toys, setToys } = useContext(AuthContext);
+  const toys = useLoaderData();
   const id = useParams().id;
 
   const targetToy = toys?.find((toy) => toy._id == id);
@@ -28,6 +28,8 @@ const UpdateToy = () => {
     toyName,
     seller_name,
     seller_email,
+    tags,
+    details,
   } = targetToy;
 
   const handleUpdate = (event) => {
@@ -42,6 +44,7 @@ const UpdateToy = () => {
     const details = form.details.value;
     const quantity = form.quantity.value;
     const category = form.category.value;
+    const tags = form.tags.value;
     const updatedToy = {
       toyName,
       seller_name: sellerName,
@@ -52,6 +55,7 @@ const UpdateToy = () => {
       details,
       quantity,
       category,
+      tags,
     };
     Swal.fire({
       icon: "errors",
@@ -106,7 +110,8 @@ const UpdateToy = () => {
               id=""
               placeholder="Toy name"
               defaultValue={toyName}
-              className="rounded-md p-3 border-0 w-2/3 "
+              required
+              className="rounded-md p-3 outline-0 border-0 w-2/3 "
             />
           </div>
           <div className="space-y-2">
@@ -120,9 +125,10 @@ const UpdateToy = () => {
               type="text"
               name="url"
               id=""
+              required
               placeholder="Photo url"
               defaultValue={photo_url}
-              className="rounded-md p-3 border-0 w-2/3 "
+              className="rounded-md p-3 outline-0 border-0 w-2/3 "
             />
           </div>
           <div className="space-y-2">
@@ -136,9 +142,10 @@ const UpdateToy = () => {
               type="text"
               name="sellerName"
               id=""
+              required
               placeholder="Seller name"
               defaultValue={seller_name}
-              className="rounded-md p-3 border-0 w-2/3"
+              className="rounded-md p-3 outline-0 border-0 w-2/3"
             />
           </div>
           <div className="space-y-2">
@@ -152,9 +159,10 @@ const UpdateToy = () => {
               type="email"
               name="sellerEmail"
               id=""
+              required
               placeholder="Seller email"
               defaultValue={seller_email}
-              className="rounded-md p-3 border-0 w-2/3"
+              className="rounded-md p-3 outline-0 border-0 w-2/3"
             />
           </div>
           <div className="space-y-2">
@@ -168,9 +176,10 @@ const UpdateToy = () => {
               type="text"
               name="category"
               id=""
+              required
               defaultValue={category}
               placeholder="piano,guitar,violin,drums etc"
-              className="rounded-md p-3 border-0 w-2/3"
+              className="rounded-md p-3 outline-0 border-0 w-2/3"
             />
           </div>
           <div className="space-y-2">
@@ -184,9 +193,10 @@ const UpdateToy = () => {
               type="text"
               name="price"
               id=""
+              required
               defaultValue={price}
               placeholder="Toy price"
-              className="rounded-md p-3 border-0 w-2/3"
+              className="rounded-md p-3 outline-0  border-0 w-2/3"
             />
           </div>
           <div className="space-y-2">
@@ -202,7 +212,7 @@ const UpdateToy = () => {
               id=""
               defaultValue={rating}
               placeholder="rating"
-              className="rounded-md p-3 border-0 w-2/3"
+              className="rounded-md p-3 outline-0 border-0 w-2/3"
             />
           </div>
           <div className="space-y-2">
@@ -218,7 +228,21 @@ const UpdateToy = () => {
               id=""
               defaultValue={quantity}
               placeholder="available quantity "
-              className="rounded-md p-3 border-0 w-2/3"
+              className="rounded-md p-3 outline-0 border-0 w-2/3"
+            />
+          </div>
+          <div className="space-y-2">
+            <label>
+              <span className="text-xl font-semibold text-slate-700">Tags</span>
+            </label>
+            <br />
+            <input
+              type="text"
+              name="tags"
+              id=""
+              placeholder="new or old"
+              defaultValue={tags}
+              className="rounded-md p-3  outline-0 border-0 w-2/3"
             />
           </div>
           <div className="space-y-2">
@@ -229,9 +253,11 @@ const UpdateToy = () => {
             </label>
             <br />
             <textarea
-              className="w-2/3 rounded-md border-0"
+              className="w-2/3 rounded-md outline-0 border-0"
               name="details"
               id=""
+              required
+              defaultValue={details}
               cols="30"
               rows="5"
             ></textarea>
@@ -240,7 +266,7 @@ const UpdateToy = () => {
         <div className="text-center w-2/3 mx-auto pb-10">
           {" "}
           <input
-            className="btn hover:bg-orange-500 border-0 w-1/2 "
+            className="btn hover:bg-orange-500 border-0 outline-0 w-1/2 "
             type="submit"
             value="Update Toy"
           />

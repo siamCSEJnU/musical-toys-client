@@ -7,7 +7,6 @@ const ToyDetails = () => {
   const toy = useLoaderData();
   console.log(toy);
   const {
-    _id,
     category,
     details,
     photo_url,
@@ -20,7 +19,7 @@ const ToyDetails = () => {
   return (
     <div className="flex md:flex-row flex-col gap-10 md:gap-0  md:w-2/3 mx-auto p-10 rounded-xl items-center border justify-center space-x-10 bg-slate-200">
       <div className="space-y-5">
-        <img className="h-96 rounded-full" src={photo_url} alt="" />
+        <img className="h-96 " src={photo_url} alt="" />
         <h2 className="text-xl text-center font-semibold">
           Own By : <span className="font-mono ">{seller_name}</span>
         </h2>

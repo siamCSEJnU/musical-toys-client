@@ -19,6 +19,7 @@ const AddToy = () => {
     const details = form.details.value;
     const quantity = form.quantity.value;
     const category = form.category.value;
+    const tags = form.tags.value;
     const toy = {
       toyName,
       seller_name: sellerName,
@@ -29,6 +30,7 @@ const AddToy = () => {
       details,
       quantity,
       category,
+      tags,
     };
     Swal.fire({
       icon: "errors",
@@ -81,14 +83,15 @@ const AddToy = () => {
             <input
               type="text"
               name="toyName"
+              required
               id=""
               placeholder="Toy name"
-              className="rounded-md p-3 border-0 w-2/3 "
+              className="rounded-md p-3 outline-0 border-0 w-2/3 "
             />
           </div>
           <div className="space-y-2">
             <label>
-              <span className="text-xl font-semibold text-slate-700">
+              <span className="text-xl font-semibold  text-slate-700">
                 Toy Picture URL{" "}
               </span>
             </label>
@@ -96,9 +99,10 @@ const AddToy = () => {
             <input
               type="text"
               name="url"
+              required
               id=""
               placeholder="Photo url"
-              className="rounded-md p-3 border-0 w-2/3 "
+              className="rounded-md p-3 outline-0 border-0 w-2/3 "
             />
           </div>
           <div className="space-y-2">
@@ -112,9 +116,10 @@ const AddToy = () => {
               type="text"
               name="sellerName"
               id=""
+              required
               placeholder="Seller name"
               defaultValue={user?.displayName}
-              className="rounded-md p-3 border-0 w-2/3"
+              className="rounded-md p-3 outline-0 border-0 w-2/3"
             />
           </div>
           <div className="space-y-2">
@@ -128,9 +133,10 @@ const AddToy = () => {
               type="email"
               name="sellerEmail"
               id=""
+              required
               placeholder="Seller email"
               defaultValue={user?.email}
-              className="rounded-md p-3 border-0 w-2/3"
+              className="rounded-md p-3 outline-0 border-0 w-2/3"
             />
           </div>
           <div className="space-y-2">
@@ -144,8 +150,9 @@ const AddToy = () => {
               type="text"
               name="category"
               id=""
+              required
               placeholder="piano,guitar,violin,drums etc"
-              className="rounded-md p-3 border-0 w-2/3"
+              className="rounded-md p-3 outline-0 border-0 w-2/3"
             />
           </div>
           <div className="space-y-2">
@@ -159,8 +166,9 @@ const AddToy = () => {
               type="text"
               name="price"
               id=""
+              required
               placeholder="Toy price"
-              className="rounded-md p-3 border-0 w-2/3"
+              className="rounded-md p-3 outline-0 border-0 w-2/3"
             />
           </div>
           <div className="space-y-2">
@@ -175,7 +183,7 @@ const AddToy = () => {
               name="rating"
               id=""
               placeholder="rating"
-              className="rounded-md p-3 border-0 w-2/3"
+              className="rounded-md p-3 outline-0 border-0 w-2/3"
             />
           </div>
           <div className="space-y-2">
@@ -190,7 +198,20 @@ const AddToy = () => {
               name="quantity"
               id=""
               placeholder="available quantity "
-              className="rounded-md p-3 border-0 w-2/3"
+              className="rounded-md p-3 outline-0 border-0 w-2/3"
+            />
+          </div>
+          <div className="space-y-2">
+            <label>
+              <span className="text-xl font-semibold text-slate-700">Tags</span>
+            </label>
+            <br />
+            <input
+              type="text"
+              name="tags"
+              id=""
+              placeholder="new or old"
+              className="rounded-md p-3 outline-0 border-0 w-2/3"
             />
           </div>
           <div className="space-y-2">
@@ -201,9 +222,10 @@ const AddToy = () => {
             </label>
             <br />
             <textarea
-              className="w-2/3 rounded-md border-0"
+              className="w-2/3 rounded-md outline-0 border-0"
               name="details"
               id=""
+              required
               cols="30"
               rows="5"
             ></textarea>
