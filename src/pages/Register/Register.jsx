@@ -3,11 +3,14 @@ import register from "../../assets/register/register.jpg";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { updateProfile } from "firebase/auth";
+import useTitle from "../../hooks/useTitle";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
   const [regError, setRegError] = useState("");
   const navigate = useNavigate();
+
+  useTitle("Register");
 
   const handleRegister = (event) => {
     event.preventDefault();

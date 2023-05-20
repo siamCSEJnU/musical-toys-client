@@ -1,8 +1,10 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import MyToysRow from "./MyToysRow";
+import useTitle from "../../hooks/useTitle";
 
 const MyToys = () => {
+  useTitle("My Toys");
   const { user, toys } = useContext(AuthContext);
 
   const myToys = toys?.filter((toy) => toy.seller_email == user.email);

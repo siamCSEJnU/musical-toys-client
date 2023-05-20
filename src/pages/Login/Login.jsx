@@ -3,9 +3,12 @@ import login from "../../assets/login/login.jpg";
 import { FaGoogle } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import useTitle from "../../hooks/useTitle";
 const Login = () => {
   const { setUser, GoogleSignIn, ManualSignIn } = useContext(AuthContext);
   const [logError, setLogError] = useState("");
+
+  useTitle("Login");
 
   const navigate = useNavigate();
   const location = useLocation();

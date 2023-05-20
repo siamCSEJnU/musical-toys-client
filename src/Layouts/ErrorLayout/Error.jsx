@@ -2,6 +2,7 @@ import React from "react";
 import error from "../../assets/error.jpg";
 
 const Error = () => {
+  useTitle("Error");
   return (
     <div className="flex items-center justify-center mt-24 ">
       <img src={error} alt="error" style={{ height: "500px" }} />

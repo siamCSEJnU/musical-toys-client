@@ -2,8 +2,10 @@ import { useContext } from "react";
 import { Form } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
+import useTitle from "../../hooks/useTitle";
 
 const AddToy = () => {
+  useTitle("Add Toy");
   const { user } = useContext(AuthContext);
   const handleSubmit = (event) => {
     event.preventDefault();

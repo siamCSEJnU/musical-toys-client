@@ -2,8 +2,10 @@ import { useContext, useRef } from "react";
 import { Form, useParams } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
+import useTitle from "../../hooks/useTitle";
 
 const UpdateToy = () => {
+  useTitle("Update Toy");
   const { toys, setToys } = useContext(AuthContext);
   const id = useParams().id;
 
