@@ -27,7 +27,8 @@ const CategoryShop = () => {
         </TabList>
         {collection.map((category) => (
           <TabPanel key={category}>
-            <div className="flex md:flex-row flex-col justify-center gap-10 md:gap-20 items-center mt-12">
+            <div className="flex flex-wrap gap-10 md:gap-0 justify-evenly  mt-12">
+              {/* <div className="flex md:flex-row flex-col justify-center gap-10 md:gap-20 items-center mt-12"> */}
               {toys
                 ?.filter(
                   (toy) => toy.category.toLowerCase() === category.toLowerCase()

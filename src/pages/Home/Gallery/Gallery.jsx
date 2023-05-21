@@ -20,8 +20,9 @@ const Gallery = ({ GalleryData }) => {
     <div>
       <h2 className="text-4xl font-bold mb-8 text-center ">Gallery</h2>
 
-      <div className="w-1/3 mx-auto ">
-        <ul className="flex justify-center  gap-5 mb-5">
+      <div>
+        {/* <ul className="grid md:grid-cols-8 md:gap-24 grid-cols-3 gap-16  mb-5"> */}
+        <ul className="flex justify-center flex-wrap gap-5 mb-5">
           <li>
             <button
               onClick={() => setGalleryImages(GalleryData)}

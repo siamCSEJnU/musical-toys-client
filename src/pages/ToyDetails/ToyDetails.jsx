@@ -17,14 +17,15 @@ const ToyDetails = () => {
     seller_name,
   } = toy;
   return (
-    <div className="flex md:flex-row flex-col gap-10 md:gap-0  md:w-2/3 mx-auto p-10 rounded-xl items-center border justify-center space-x-10 bg-slate-200">
+    <div className="flex md:flex-row flex-col gap-10 md:gap-0  md:w-2/3 mx-auto p-10 rounded-xl items-center border justify-center space-x-10 bg-slate-300 ">
+      {/* <div className="flex md:flex-row flex-col gap-10 md:gap-0  md:w-2/3 mx-auto p-10 rounded-xl items-center border justify-center space-x-10 bg-slate-300"> */}
       <div className="space-y-5">
         <img className="h-96 " src={photo_url} alt="" />
         <h2 className="text-xl text-center font-semibold">
           Own By : <span className="font-mono ">{seller_name}</span>
         </h2>
       </div>
-      <div className=" md:w-1/3  space-y-8 text-slate-700">
+      <div className=" md:w-1/3  space-y-8 text-slate-800">
         <h2 className="text-4xl font-bold">{toyName}</h2>
         <div className="text-xl space-y-5 font-bold">
           <p>Category : {category}</p>

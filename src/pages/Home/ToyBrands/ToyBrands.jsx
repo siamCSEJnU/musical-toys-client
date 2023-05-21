@@ -7,8 +7,9 @@ const ToyBrands = () => {
   return (
     <div>
       <h2 className="text-4xl font-bold mb-10 text-center ">Our Brands</h2>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-        <div className="border p-3 bg-slate-300 rounded-lg  space-y-3">
+      <div className="flex flex-wrap gap-4 md:grid md:grid-cols-4 md:gap-8">
+        {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8"> */}
+        <div className="border p-3 bg-slate-700 rounded-lg  space-y-3">
           <div>
             <img
               src={Brand1}
@@ -17,20 +18,21 @@ const ToyBrands = () => {
               alt=""
             />
           </div>
-          <div className="space-y-4 text-slate-800">
+          {/* <div className="space-y-4 text-slate-800"> */}
+          <div className="space-y-4 text-slate-200">
             <h2 className="text-2xl font-semibold">Brand-1</h2>
             <p className=" font-semibold">
               {" "}
               Experience the joy of music with our innovative toys
             </p>
             <div className="text-end">
-              <button className="btn hover:bg-orange-500 border-0 outline-0 m-2">
+              <button className="btn bg-orange-300 text-slate-800 hover:bg-slate-200 hover:text-slate-700 border-0 outline-0 m-2">
                 Learn More
               </button>
             </div>
           </div>
         </div>
-        <div className="border p-3 bg-slate-300 rounded-lg  space-y-3">
+        <div className="border p-3 bg-slate-700 rounded-lg  space-y-3">
           <div>
             <img
               src={Brand2}
@@ -39,20 +41,20 @@ const ToyBrands = () => {
               alt=""
             />
           </div>
-          <div className="space-y-4 text-slate-800">
+          <div className="space-y-4 text-slate-200">
             <h2 className="text-2xl font-semibold">Brand-2</h2>
             <p className=" font-semibold">
               {" "}
               Experience the joy of music with our innovative toys
             </p>
             <div className="text-end">
-              <button className="btn hover:bg-orange-500 border-0 outline-0 m-2">
+              <button className="btn bg-orange-300 text-slate-800 hover:bg-slate-200 hover:text-slate-700 border-0 outline-0 m-2">
                 Learn More
               </button>
             </div>
           </div>
         </div>
-        <div className="border p-3 bg-slate-300 rounded-lg  space-y-3">
+        <div className="border p-3 bg-slate-700 rounded-lg  space-y-3">
           <div>
             <img
               src={Brand3}
@@ -61,20 +63,20 @@ const ToyBrands = () => {
               alt=""
             />
           </div>
-          <div className="space-y-4 text-slate-800">
+          <div className="space-y-4 text-slate-200">
             <h2 className="text-2xl font-semibold">Brand-3</h2>
             <p className=" font-semibold">
               {" "}
               Experience the joy of music with our innovative toys
             </p>
             <div className="text-end">
-              <button className="btn hover:bg-orange-500 border-0 outline-0 m-2">
+              <button className="btn bg-orange-300 text-slate-800 hover:bg-slate-200 hover:text-slate-700 border-0 outline-0 m-2">
                 Learn More
               </button>
             </div>
           </div>
         </div>
-        <div className="border p-3 bg-slate-300 rounded-lg  space-y-3">
+        <div className="border p-3 bg-slate-700 rounded-lg  space-y-3">
           <div>
             <img
               src={Brand4}
@@ -83,14 +85,14 @@ const ToyBrands = () => {
               alt=""
             />
           </div>
-          <div className="space-y-4 text-slate-800">
+          <div className="space-y-4 text-slate-200">
             <h2 className="text-2xl font-semibold">Brand-1</h2>
             <p className=" font-semibold">
               {" "}
               Experience the joy of music with our innovative toys
             </p>
             <div className="text-end">
-              <button className="btn hover:bg-orange-500 border-0 outline-0 m-2">
+              <button className="btn bg-orange-300 text-slate-800 hover:bg-slate-200 hover:text-slate-700 border-0 outline-0 m-2">
                 Learn More
               </button>
             </div>

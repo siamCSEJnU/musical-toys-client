@@ -5,7 +5,7 @@ const CategoryShopCard = ({ toy }) => {
   //   console.log(toy);
   const { _id, photo_url, price, rating, toyName } = toy;
   return (
-    <div className="card card-compact  w-96 bg-slate-300 shadow-xl">
+    <div className="card card-compact  w-96 bg-orange-200 shadow-xl">
       <figure>
         <img
           src={photo_url}

@@ -32,7 +32,8 @@ const LatestToys = () => {
       <h2 className="text-4xl font-bold mb-10 mt-5 text-center ">
         What's Latest Now?
       </h2>
-      <div className=" grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+      <div className=" flex flex-wrap gap-4 md:grid md:grid-cols-4 md:gap-8">
+        {/* <div className=" grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8"> */}
         {latestToys.map((toy) => (
           <LatestToyCard key={toy._id} toy={toy}></LatestToyCard>
         ))}
