@@ -1,8 +1,15 @@
 import { useEffect, useState } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
+
+import new3 from "../../../assets/newLogo/new3.jpg";
 
 import LatestToyCard from "./LatestToyCard";
 
 const LatestToys = () => {
+  useEffect(() => {
+    Aos.init();
+  }, []);
   const [toys, setToys] = useState([]);
   const [clicked, setClicked] = useState(false);
   useEffect(() => {
@@ -29,9 +36,17 @@ const LatestToys = () => {
 
   return (
     <div>
-      <h2 className="text-4xl font-bold mb-10 mt-5 text-center ">
-        What's Latest Now?
-      </h2>
+      <div className="flex justify-center items-center">
+        <h2 className="text-4xl font-bold  text-center ">What's Latest Now?</h2>
+        <div
+          data-aos="flip-right"
+          data-aos-easing="ease-in-out-back"
+          data-aos-duration="800"
+        >
+          <img src={new3} className="h-36" alt="" />
+        </div>
+      </div>
+
       <div className=" flex flex-wrap gap-4 md:grid md:grid-cols-4 md:gap-8">
         {/* <div className=" grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8"> */}
         {latestToys.map((toy) => (
