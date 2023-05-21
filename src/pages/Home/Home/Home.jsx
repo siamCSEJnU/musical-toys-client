@@ -5,6 +5,7 @@ import useTitle from "../../../hooks/useTitle";
 import LatestToys from "../LatestToys/LatestToys";
 import ToyBrands from "../ToyBrands/ToyBrands";
 import { useLoaderData } from "react-router-dom";
+import PopularToys from "../../PopularToys/PopularToys";
 
 const Home = () => {
   useTitle("Home");
@@ -16,6 +17,7 @@ const Home = () => {
       <CategoryShop></CategoryShop>
 
       <LatestToys></LatestToys>
+      <PopularToys></PopularToys>
       <ToyBrands></ToyBrands>
     </div>
   );
