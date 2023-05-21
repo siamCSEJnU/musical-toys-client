@@ -68,13 +68,16 @@ const UpdateToy = () => {
       confirmButtonText: "Yes,update it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/updateToy/${_id}`, {
-          method: "PUT",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(updatedToy),
-        })
+        fetch(
+          `https://musical-toys-server-siamcsejnu.vercel.app/updateToy/${_id}`,
+          {
+            method: "PUT",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(updatedToy),
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             form.reset();

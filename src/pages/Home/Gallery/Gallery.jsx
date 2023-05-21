@@ -1,15 +1,16 @@
-import { GalleryData } from "../../../GalleryData";
+// import { GalleryData } from "../../../GalleryData";
 
 import { useEffect, useState } from "react";
 
-const Gallery = () => {
+const Gallery = ({ GalleryData }) => {
+  console.log(GalleryData);
   const [galleryImages, setGalleryImages] = useState([]);
   const [collection, setCollection] = useState([]);
 
   useEffect(() => {
     setGalleryImages(GalleryData);
     setCollection([...new Set(GalleryData.map((item) => item.title))]);
-  }, []);
+  }, [GalleryData]);
 
   const galleryFilter = (title) => {
     const filteredData = GalleryData.filter((item) => item.title === title);
@@ -43,9 +44,9 @@ const Gallery = () => {
       </div>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-5 ">
         {galleryImages.map((item) => (
-          <div key={item.id}>
+          <div key={item._id}>
             <img
-              src={item.image}
+              src={item.img_url}
               alt=""
               className="object-cover h-36 md:h-60 w-full"
               //   style={{ height: "300px", width: "100%" }}

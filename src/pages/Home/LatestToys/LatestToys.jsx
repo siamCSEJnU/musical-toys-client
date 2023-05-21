@@ -6,7 +6,7 @@ const LatestToys = () => {
   const [toys, setToys] = useState([]);
   const [clicked, setClicked] = useState(false);
   useEffect(() => {
-    fetch("http://localhost:5000/allToys")
+    fetch("https://musical-toys-server-siamcsejnu.vercel.app/allToys")
       .then((res) => res.json())
       .then((data) => {
         if (clicked) {

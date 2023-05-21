@@ -20,6 +20,8 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        loader: () =>
+          fetch("https://musical-toys-server-siamcsejnu.vercel.app/gallery"),
       },
       {
         path: "/login",
@@ -61,7 +63,9 @@ const router = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/allToys/${params.id}`),
+          fetch(
+            `https://musical-toys-server-siamcsejnu.vercel.app/allToys/${params.id}`
+          ),
       },
       {
         path: "/updateToy/:id",
@@ -70,7 +74,8 @@ const router = createBrowserRouter([
             <UpdateToy></UpdateToy>
           </PrivateRoutes>
         ),
-        loader: () => fetch("http://localhost:5000/allToys"),
+        loader: () =>
+          fetch("https://musical-toys-server-siamcsejnu.vercel.app/allToys"),
       },
     ],
   },

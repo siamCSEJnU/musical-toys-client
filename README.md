@@ -1,0 +1,5 @@
+- this website named as musical toys
+- gallery data inserted in db manually
+- server app deployed to vercel
+- client app deployed to firebase
+- site link :https://musical-toys.web.app/
